@@ -1,9 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "FlyerHannover",
+  "legalName": "ProSmi Verlag, Inh. Viktoriya Fradkina",
+  "description": "Zuverlässige Flyer- & Prospektverteilung in Hannover und Region. Haushaltswerbung, Auslageverteilung und Promotion ab 1.000 Stück.",
+  "url": "https://www.flyerhannover.de",
+  "telephone": "+4951110568928",
+  "email": "info@flyer-verteilt.de",
+  "areaServed": {
+    "@type": "City",
+    "name": "Hannover"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Dessauer Str. 14",
+    "postalCode": "30161",
+    "addressLocality": "Hannover",
+    "addressRegion": "Niedersachsen",
+    "addressCountry": "DE"
+  },
+  "sameAs": []
+};
 ---
 
 <Layout>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <Header />
 
   <main>
